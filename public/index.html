@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Paper Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
+        </div>
+
+        <!-- Register Form -->
+        <div id="registerForm">
+            <h2>Register</h2>
+            <input type="email" id="registerEmail" placeholder="Email">
+            <input type="password" id="registerPassword" placeholder="Password">
+            <button onclick="register()">Register</button>
+            <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard" style="display: none;">
+            <header>
+                <h2>Research Paper Repository</h2>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </header>
+            
+            <div class="upload-section">
+                <h3>Upload New Research Paper</h3>
+                <form id="uploadForm" onsubmit="uploadPaper(event)">
+                    <input type="text" id="paperTitle" placeholder="Paper Title" required>
+                    <input type="text" id="paperAuthors" placeholder="Authors" required>
+                    <input type="text" id="paperKeywords" placeholder="Keywords (comma separated)">
+                    <input type="file" id="paperFile" accept=".pdf" required>
+                    <textarea id="paperAbstract" placeholder="Abstract" rows="4"></textarea>
+                    <button type="submit">Upload Paper</button>
+                </form>
+            </div>
+
+            <div class="papers-section">
+                <h3>My Research Papers</h3>
+                <div id="papersList">
+                    <!-- Papers will be listed here dynamically -->
+                </div>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
